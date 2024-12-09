@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+ <title>Student Feedback Form</title>
+ <style>
+ body {
+ font-family: 'Poppins', Arial, sans-serif;
+ margin: 0;
+ padding: 0;
+ background-color: #f0f8ff;
+ color: #333;
+ }
+ h1 {
+ text-align: center;
+ color: #2c3e50;
+ margin-top: 20px;
+ }
+ form {
+ max-width: 600px;
+ margin: 20px auto;
+ background: #ffffff;
+ padding: 20px 30px;
+ border-radius: 12px;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+ .form-group {
+ margin-bottom: 20px;
+ }
+ label {
+ display: block;
+ font-weight: bold;
+ margin-bottom: 8px;
+ color: #34495e;
+ }
+ input, textarea, select {
+ width: 100%;
+ padding: 10px;
+ margin-top: 5px;
+ border: 1px solid #ccc;
+ border-radius: 8px;
+ font-size: 16px;
+ background: #f9f9f9;
+ }
+ input[type="radio"], input[type="checkbox"] {
+ width: auto;
+ margin-right: 10px;
+ }
+ .radio-label, .checkbox-label {
+ margin-right: 15px;
+ font-size: 14px;
+ color: #34495e;
+ }
+ .form-actions {
+ text-align: center;
+}
+ button {
+ padding: 12px 25px;
+ background-color: #3498db;
+ color: white;
+ font-size: 16px;
+ font-weight: bold;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ transition: background-color 0.3s ease;
+ }
+ button:hover {
+ background-color: #2980b9;
+ }
+ .form-group-inline {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ }
+ .form-group-inline label {
+ margin: 0;
+ flex: 1;
+ }
+ .form-group-inline input {
+ flex: 2;
+ margin-left: 10px;
+ }
+ </style>
+ <script>
+function handleSubmit(event) {
+ event.preventDefault(); // Prevent the default form submission
+ alert("Form Submitted Successfully!"); // Show a pop-up message
+ event.target.reset(); // Reset the form
+ }
+ </script>
+</head>
+<body>
+ <h1>Student Feedback Form</h1>
+ <form onsubmit="handleSubmit(event)">
+ <!-- Student Name -->
+ <div class="form-group">
+ <label for="studentName">Name:</label>
+ <input type="text" id="studentName" name="studentName" placeholder="Enter your 
+full name" required>
+ </div>
+ <!-- Email -->
+ <div class="form-group">
+ <label for="studentEmail">Email:</label>
+ <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter 
+your email" required>
+ </div>
+ <!-- Course -->
+ <div class="form-group">
+ <label for="course">Course:</label>
+ <select id="course" name="course" required>
+ <option value="">-- Select Your Course --</option>
+<option value="btech">B.Tech</option>
+ <option value="mtech">M.Tech</option>
+ <option value="mba">MBA</option>
+ <option value="bsc">B.Sc</option>
+ <option value="msc">M.Sc</option>
+ </select>
+ </div>
+ <!-- Rating -->
+ <div class="form-group">
+ <label>How would you rate the course?</label>
+ <label class="radio-label"><input type="radio" id="excellent" name="rating" 
+value="excellent"> Excellent</label>
+ <label class="radio-label"><input type="radio" id="good" name="rating" 
+value="good"> Good</label>
+ <label class="radio-label"><input type="radio" id="average" name="rating" 
+value="average"> Average</label>
+ <label class="radio-label"><input type="radio" id="poor" name="rating" 
+value="poor"> Poor</label>
+ </div>
+ <!-- Checkbox for Topics -->
+ <div class="form-group">
+ <label>Which topics did you find most useful? (Select all that apply)</label>
+ <label class="checkbox-label"><input type="checkbox" id="topic1" name="topics" 
+value="topic1"> Programming</label>
+ <label class="checkbox-label"><input type="checkbox" id="topic2" name="topics" 
+value="topic2"> Mathematics</label>
+ <label class="checkbox-label"><input type="checkbox" id="topic3" name="topics" 
+value="topic3"> Data Science</label>
+ <label class="checkbox-label"><input type="checkbox" id="topic4" name="topics" 
+value="topic4"> Soft Skills</label>
+</div>
+ <!-- Feedback -->
+ <div class="form-group">
+ <label for="feedback">Please share your feedback:</label>
+ <textarea id="feedback" name="feedback" rows="5" placeholder="Write your 
+comments here..."></textarea>
+ </div>
+ <!-- Suggestions -->
+ <div class="form-group">
+ <label for="suggestions">Any suggestions for improvement:</label>
+ <textarea id="suggestions" name="suggestions" rows="3" placeholder="Your 
+suggestions..."></textarea>
+ </div>
+ <!-- Submit Button -->
+ <div class="form-actions">
+ <button type="submit">Submit Feedback</button>
+ </div>
+ </form>
+</body>
+</html>
